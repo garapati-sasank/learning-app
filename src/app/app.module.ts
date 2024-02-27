@@ -12,6 +12,8 @@ import { KidsComponent } from './kids/kids.component';
 import { SaleComponent } from './sale/sale.component';
 import { UscisComponent } from './uscis/uscis.component';
 import { SalesTestComponent } from './sales-test/sales-test.component';
+import { UniversityComponent } from './university/university.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,10 +26,12 @@ import { SalesTestComponent } from './sales-test/sales-test.component';
     KidsComponent,
     SaleComponent,
     UscisComponent,
-    SalesTestComponent
+    SalesTestComponent,
+    UniversityComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
