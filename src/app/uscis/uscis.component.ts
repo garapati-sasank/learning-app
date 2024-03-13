@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-uscis',
   templateUrl: './uscis.component.html',
-  styleUrl: './uscis.component.scss'
+  styleUrl: './uscis.component.scss',
 })
 export class UscisComponent {
   title: string = 'shopping-app';
@@ -66,7 +66,7 @@ export class UscisComponent {
     this.addTwoNumbers(10, 20);
     this.addTwoNumbers(10, 20);
     this.studentDetails(10, '20', false);
-    this.additionResult = this.addNumbers(1,2);
+    this.additionResult = this.addNumbers(1, 2);
     console.log(this.additionResult);
     this.fullName = this.mergerStrings('Sasi', 'Garapati');
     console.log(this.fullName);
@@ -104,14 +104,13 @@ export class UscisComponent {
   addNumbers(value1: number, value2: number): number {
     // return value1+value2;
     let result: number;
-    result = value1+value2;
+    result = value1 + value2;
     return result;
   }
 
   mergerStrings(value1: string, value2: string): string {
     let mergedStrings: string;
-    mergedStrings=value1+value2;
+    mergedStrings = value1 + value2;
     return mergedStrings;
   }
-
 }

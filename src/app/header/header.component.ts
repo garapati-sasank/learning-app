@@ -4,14 +4,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-
   router = inject(Router);
 
   navigateToMens() {
-    // logic to add route into browser url. 
+    // logic to add route into browser url.
     this.router.navigate(['mens']);
   }
 
@@ -22,5 +21,4 @@ export class HeaderComponent {
   navigateTo(path: string) {
     this.router.navigate([path]);
   }
-
 }

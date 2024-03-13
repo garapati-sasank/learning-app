@@ -12,7 +12,10 @@ export class UniversityService {
     return this.http.get('https://api.usaspending.gov/api/v2/references/toptier_agencies/');
   }
 
-  
+  gettingTheFetchedUniversityList(){
+   return this.http.get('http://universities.hipolabs.com/search?country=United+Kingdom')
+
+  }
 }
 
 // checking acc balance 

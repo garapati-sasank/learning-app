@@ -1,1 +1,19 @@
 <p>mens works!</p>
+<button (click)="fetchingUniversities()">Fetch All Universities</button>
+<table>
+    <tr>
+        <th>Country</th>
+        <th>Name</th>
+        <th>Alpha Two Code</th>
+        <th>Domains</th>
+        <th>StateProvince</th>
+    </tr>
+
+    <tr *ngFor="let result of apiFetchingListResponses">
+        <td>{{result.country}}</td>
+        <td>{{result.name}}</td>
+        <td>{{result.alpha_two_code}}</td>
+        <td>{{result.domains}}</td>
+        <td>{{result.state-province}}</td>
+    </tr>
+</table>

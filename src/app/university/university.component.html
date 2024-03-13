@@ -1,2 +1,24 @@
 
 <button (click)="getTheUniversityList()"> University List </button>
+
+<button (click)="testIfCondition(45)">Testing</button>
+<p>{{title}}</p>
+<p>{{student}}</p>
+<p>{{studentsList[0].name}}</p>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Coode</th>
+        <th>Name</th>
+        <th>Abber</th>
+    </tr>
+
+    <tr *ngFor="let result of apiResponseList">
+    <td>{{result.agency_id}}</td>
+    <td>{{result.toptier_code}}</td>
+    <td>{{result.agency_name}}</td>
+    <td>{{result.abbreviation}}</td>
+    </tr>
+
+
+</table>
