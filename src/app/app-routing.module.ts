@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MensComponent } from './mens/mens.component';
-import { WomensComponent } from './womens/womens.component';
 import { UscisComponent } from './uscis/uscis.component';
 import { KidsComponent } from './kids/kids.component';
 import { SaleComponent } from './sale/sale.component';
@@ -25,7 +24,7 @@ const routes: Routes = [
     path: 'sale',
     component: SaleComponent,
     children: [
-      { path: '', redirectTo: 'tops', pathMatch: 'full'},
+      { path: '', redirectTo: 'tops', pathMatch: 'full' },
       { path: 'tops', component: TopsComponent },
       { path: 'bottoms', component: BottomsComponent },
       { path: 'accessories', component: AccessoriesComponent },
@@ -43,6 +42,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
