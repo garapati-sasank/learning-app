@@ -17,6 +17,9 @@ import { TopsComponent } from './sale/tops/tops.component';
 import { BottomsComponent } from './sale/bottoms/bottoms.component';
 import { AccessoriesComponent } from './sale/accessories/accessories.component';
 import { FootWearComponent } from './sale/foot-wear/foot-wear.component';
+import { UniversityOutputComponent } from './university-output/university-output.component';
+import { UniversityOutputFormComponent } from './university-output/university-output-form/university-output-form.component';
+import { UniversityOutputTableComponent } from './university-output/university-output-table/university-output-table.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,11 @@ import { FootWearComponent } from './sale/foot-wear/foot-wear.component';
     TopsComponent,
     BottomsComponent,
     AccessoriesComponent,
-    FootWearComponent
+    FootWearComponent,
+    UniversityOutputComponent,
+    UniversityOutputFormComponent,
+    UniversityOutputTableComponent,
+  
   ],
   imports: [
     BrowserModule,

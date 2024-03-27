@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Output } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MensComponent } from './mens/mens.component';
 import { UscisComponent } from './uscis/uscis.component';
@@ -10,6 +10,7 @@ import { TopsComponent } from './sale/tops/tops.component';
 import { BottomsComponent } from './sale/bottoms/bottoms.component';
 import { AccessoriesComponent } from './sale/accessories/accessories.component';
 import { FootWearComponent } from './sale/foot-wear/foot-wear.component';
+import { UniversityOutputComponent } from './university-output/university-output.component';
 
 const routes: Routes = [
   { path: 'mens', component: MensComponent },
@@ -38,6 +39,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./women-sale/women-sale.module').then((m) => m.WomenSaleModule),
   },
+  {
+    path: 'university-lazy-loading', 
+    loadChildren: () => import('./university-overview/university-overview.module').then(m => m.UniversityOverviewModule)
+  },
+  {path:'output', component: UniversityOutputComponent},
 ];
 
 @NgModule({

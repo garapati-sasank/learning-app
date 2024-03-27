@@ -1,0 +1,18 @@
+<p>university-output-table works!</p>
+<table>
+    <tr>
+        <th>Country</th>
+        <th>Name</th>
+        <th>Alpha Two Code</th>
+        <th>Domains</th>
+
+    </tr>
+
+    <tr *ngFor="let result of universityListFromForm">
+        <td>{{result.country}}</td>
+        <td>{{result.name}}</td>
+        <td>{{result.alpha_two_code}}</td>
+        <td>{{result.domains}}</td>
+        
+    </tr>
+</table>

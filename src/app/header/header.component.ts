@@ -21,4 +21,15 @@ export class HeaderComponent {
   navigateTo(path: string) {
     this.router.navigate([path]);
   }
+
+  navigateTotestingTheButton(){
+    
+  }
+
+  navigateToOutput(path: string) {
+    this.router.navigate([path]);
+  }
+
+  
+
 }

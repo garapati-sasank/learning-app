@@ -4,3 +4,5 @@ To create new component command ----   ng g c comp-name  -------ex(ng g c relate
 to perform lazyloading ng g m (name)--routing
 path: 'womensale' , loadchildren: () => import(    ).then((m) =>m.womenSaleModule) 
 { path: '', redirectTo: 'tops', pathMatch: 'full'} 
+parent -> children = yes @Input
+children -> parent = @Output
