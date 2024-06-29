@@ -17,6 +17,7 @@ export class UniversityFormComponent {
     this.universityformservice.extractTheUniversityList().subscribe(
       (response: any)=>{
         console.log(response);
+        // logic to go into each and every obj in array and find how many domains in there, add new property in every obj, if you find 1 domanin then value should be Ragular, if 
         this.universitiesList = response;
 
       },

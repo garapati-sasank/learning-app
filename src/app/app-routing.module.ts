@@ -11,16 +11,36 @@ import { BottomsComponent } from './sale/bottoms/bottoms.component';
 import { AccessoriesComponent } from './sale/accessories/accessories.component';
 import { FootWearComponent } from './sale/foot-wear/foot-wear.component';
 import { UniversityOutputComponent } from './university-output/university-output.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { KidsEditComponent } from './kids/kids-edit/kids-edit.component';
+import { KidsOverviewComponent } from './kids/kids-overview/kids-overview.component';
+import { authGuard } from './auth.guard';
+import { ageGuard } from './age.guard';
+import { formStatusGuard } from './form-status.guard';
+import { VehicleOverviewComponent } from './vehicle-overview/vehicle-overview.component';
 
 const routes: Routes = [
-  { path: 'mens', component: MensComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'mens', component: MensComponent, canDeactivate: [formStatusGuard] },
   {
     path: 'womens',
+    canLoad: [authGuard],
     loadChildren: () =>
       import('./womens/womens.module').then((m) => m.WomensModule),
   },
-  { path: 'xyz', component: UscisComponent },
-  { path: 'kids', component: KidsComponent },
+  { path: 'uscis', component: UscisComponent, canActivate: [authGuard,  ageGuard] },
+
+  {
+    path: 'kids', component: KidsOverviewComponent, children: [
+      { path: '', redirectTo: 'table', pathMatch: 'full'},
+      { path: 'table', component: KidsComponent,  },
+      { path: 'edit/:id', component: KidsEditComponent},
+    ],
+  },
+
   {
     path: 'sale',
     component: SaleComponent,
@@ -40,10 +60,14 @@ const routes: Routes = [
       import('./women-sale/women-sale.module').then((m) => m.WomenSaleModule),
   },
   {
-    path: 'university-lazy-loading', 
-    loadChildren: () => import('./university-overview/university-overview.module').then(m => m.UniversityOverviewModule)
+    path: 'university-lazy-loading',
+    loadChildren: () =>
+      import('./university-overview/university-overview.module').then(
+        (m) => m.UniversityOverviewModule
+      ),
   },
-  {path:'output', component: UniversityOutputComponent},
+  { path: 'output', component: UniversityOutputComponent },
+  { path: 'vehicle', component: VehicleOverviewComponent}
 ];
 
 @NgModule({
@@ -51,3 +75,5 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
+
+

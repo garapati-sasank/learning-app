@@ -48,3 +48,40 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+
+.error {
+  color: red
+}
+
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+body {
+  margin: 0 0px 10px 0px;
+}
+
+button {
+  background-color: #d56082;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #c34e6b;
+}
+
+button:disabled {
+  background-color: rgb(47, 47, 47);
+  cursor: none;
+}
