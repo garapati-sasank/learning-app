@@ -29,6 +29,7 @@ import { KidsOverviewComponent } from './kids/kids-overview/kids-overview.compon
 import { authInterceptor } from './auth.interceptor';
 import { apiHeadersInterceptor } from './api-headers.interceptor';
 import { VehicleOverviewComponent } from './vehicle-overview/vehicle-overview.component';
+import { CarComponent } from './car/car.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { VehicleOverviewComponent } from './vehicle-overview/vehicle-overview.co
     KidsEditComponent,
     KidsOverviewComponent,
     VehicleOverviewComponent,
-  
+    CarComponent,
   ],
   imports: [
     BrowserModule,

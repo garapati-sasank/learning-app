@@ -1,6 +1,6 @@
 <!-- <ul *ngIf="userName">
  
-    <li><a (click)="navigateTo('kids')">Kids</a></li>
+    <li><a routerLink='kids'>Kids</a></li>
     <li><a (click)="navigateTo('sale')">Sale</a></li>
     <li><a (click)="navigateTo('uscis')">uscis</a></li>
     <li><a (click)="navigateTo('university')">University</a></li>
@@ -10,7 +10,7 @@
     <li><a (click)="navigateToOutput('output')">University Table using input and output</a></li>
     <li *ngIf="!userName"><a (click)="navigateToLogin()">login</a></li>
     <li><a (click)="navigateToSignup()">signup</a></li>
-    <li><a (click)="logoutClick()">logout</a></li>
+<li><a (click)="logoutClick()">logout</a></li>
 
     <p style="color: white;">Loggedin  as: {{userName}}</p>
 

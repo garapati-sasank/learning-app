@@ -20,7 +20,7 @@ export class VehicleOverviewComponent {
     this.vehicleServices.logicForVehicleData().subscribe(
       (response: VehicleResponseI) => {
         console.log(response);
-        this.vehiclesList = response?.Results;
+        this.vehiclesList = response.Results;
       },
       (error) => {}
     );

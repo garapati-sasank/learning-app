@@ -1,7 +1,14 @@
 import { HttpInterceptorFn, HttpResponse } from '@angular/common/http';
+import { inject } from '@angular/core';
 import { filter, tap } from 'rxjs';
+import { CarService } from './car.service';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
+
+  console.log('req', req);
+
+  const carServices = inject(CarService);
+  
 
   const token = sessionStorage.getItem('app_token');
 

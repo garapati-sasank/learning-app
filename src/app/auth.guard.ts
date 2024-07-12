@@ -11,7 +11,9 @@ export const authGuard: CanActivateFn = (route, state) => {
 
   let communicationService = inject(CommunicationService)
 
+  let isAdminRole: boolean = communicationService.userRole === 'student';
 
 
-  return communicationService.userRole === 'admin';
+
+  return isAdminRole;
 };

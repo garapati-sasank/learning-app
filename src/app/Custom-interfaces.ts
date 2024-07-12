@@ -66,6 +66,12 @@ export interface StudentListI {
 export interface VehicleResponseI {
   Count: number;
   Message: string;
-  Results: any;
+  Results: VehicleI[];
   SearchCriteria: string;
+}
+export interface VehicleI {
+  MakeId: number;
+  MakeName: string;
+  VehicleTypeId: number;
+  VehicleTypeName: string;
 }

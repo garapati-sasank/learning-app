@@ -5,6 +5,7 @@ import { StudentListResponseI } from '../Custom-interfaces';
 import { Router } from '@angular/router';
 import { catchError, switchMap, throwError } from 'rxjs';
 
+// material-pagination
 @Component({
   selector: 'app-kids',
   templateUrl: './kids.component.html',
@@ -114,5 +115,10 @@ export class KidsComponent implements OnInit, OnDestroy {
 // }
 
 // myFun = (a: number, b: number) =>  a+b;
+
+// buildName(age) {
+
+//   const name = `sashi-${age}`;
+// }
 
 

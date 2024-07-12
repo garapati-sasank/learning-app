@@ -17,30 +17,36 @@ import { KidsEditComponent } from './kids/kids-edit/kids-edit.component';
 import { KidsOverviewComponent } from './kids/kids-overview/kids-overview.component';
 import { authGuard } from './auth.guard';
 import { ageGuard } from './age.guard';
-import { formStatusGuard } from './form-status.guard';
 import { VehicleOverviewComponent } from './vehicle-overview/vehicle-overview.component';
+import { CarComponent } from './car/car.component';
+import { formStatusGuard } from './form-status.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'car', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'mens', component: MensComponent, canDeactivate: [formStatusGuard] },
+  { path: 'mens', component: MensComponent},
   {
     path: 'womens',
     canLoad: [authGuard],
     loadChildren: () =>
       import('./womens/womens.module').then((m) => m.WomensModule),
   },
-  { path: 'uscis', component: UscisComponent, canActivate: [authGuard,  ageGuard] },
-
   {
-    path: 'kids', component: KidsOverviewComponent, children: [
-      { path: '', redirectTo: 'table', pathMatch: 'full'},
-      { path: 'table', component: KidsComponent,  },
-      { path: 'edit/:id', component: KidsEditComponent},
+    path: 'uscis',
+    component: UscisComponent,
+    canActivate: [authGuard, ageGuard],
+    canDeactivate: [formStatusGuard]
+  },
+  {
+    path: 'kids',
+    component: KidsOverviewComponent,
+    children: [
+      { path: '', redirectTo: 'table', pathMatch: 'full' },
+      { path: 'table', component: KidsComponent },
+      { path: 'edit/:id', component: KidsEditComponent },
     ],
   },
-
   {
     path: 'sale',
     component: SaleComponent,
@@ -58,6 +64,8 @@ const routes: Routes = [
     path: 'women-sale',
     loadChildren: () =>
       import('./women-sale/women-sale.module').then((m) => m.WomenSaleModule),
+    canMatch: [authGuard, ageGuard],
+
   },
   {
     path: 'university-lazy-loading',
@@ -67,13 +75,12 @@ const routes: Routes = [
       ),
   },
   { path: 'output', component: UniversityOutputComponent },
-  { path: 'vehicle', component: VehicleOverviewComponent}
+  { path: 'vehicle', component: VehicleOverviewComponent },
+  { path: 'car', component: CarComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { bindToComponentInputs: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-
-

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, inject } from '@angular/core';
 import { CommunicationService } from './communication.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,12 @@ import { CommunicationService } from './communication.service';
 })
 export class AppComponent implements OnDestroy {
 
-  communicationService = inject(CommunicationService)
+  communicationService = inject(CommunicationService);
+
+  id: number = 10;
+  name: string = 'sashi';
+
+  lastName$ : Observable<string>;
   
   
   

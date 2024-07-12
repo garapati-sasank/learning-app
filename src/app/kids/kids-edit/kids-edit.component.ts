@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input as routeId, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { KidsService } from '../../kids.service';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -14,6 +14,8 @@ export class KidsEditComponent implements OnInit {
   studentDetails= null;
   studentUpdateForm: FormGroup;
 
+  @routeId() id: string;
+
   constructor(private activatedRoute: ActivatedRoute, 
     private router: Router,
     private kidsService: KidsService) {
@@ -21,6 +23,7 @@ export class KidsEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.id);
     this.createForm();
   //  this.activatedRoute.params.subscribe(
   //   (params) => {

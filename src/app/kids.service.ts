@@ -38,7 +38,7 @@ export class KidsService {
     return this.http.put('http://localhost:3010/api/student', studentInfo);
   }
 
-  addYearsToStuResp(apiResp: StudentListResponseI) {
+  addYearsToStuResp(apiResp: StudentListResponseI): StudentListResponseI {
     let currentYear = new Date().getFullYear();
     console.log(currentYear);
     let updatedStuentsList = apiResp.data.map((student: StudentListI) => {

@@ -33,7 +33,8 @@ export class HeaderComponent {
     { label: 'login', navigateUrl: 'login', isActive: false, showItem: true },
     { label: 'Signup', navigateUrl: 'signup', isActive: false, showItem: true },
     { label: 'logout', navigateUrl: 'logout', isActive: false, showItem: true },
-    { label: 'Vehicle', navigateUrl: 'vehicle', isActive: false, showItem: true }
+    { label: 'Vehicle', navigateUrl: 'vehicle', isActive: false, showItem: true },
+    { label: 'Car', navigateUrl:'car', isActive: false, showItem: true},
   ];
 
   name: string = 'sasi';
