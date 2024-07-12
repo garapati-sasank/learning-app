@@ -1,1 +1,44 @@
-<p>kids works!</p>
+
+<form [formGroup]="studentCreateForm">
+
+
+    <input type="text" name="" id="" formControlName="studentName" placeholder="name">
+    <br>
+    <input type="text" name="" id="" formControlName="studentId" placeholder="ID">
+    <br>
+    <input type="tel" name="" id="" formControlName="studentPhoneNumber" placeholder="Phone">
+    <br>
+    <input type="text" name="" id="" formControlName="course" placeholder="course">
+    <br>
+    <input type="number" name="" id="" formControlName="year" placeholder="year">
+    <br>
+    <input type="text" name="" id="" formControlName="country" placeholder="country">
+    <br>
+
+
+</form>
+
+<button (click)="createStudentFormClick()">Create Student</button>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Number</th>
+        <th>Course</th>
+        <th>year</th>
+        <th>Actions</th>
+
+    </tr>
+
+    <tr *ngFor="let resp of  globalVariableLearning">
+        <td>{{resp.studentName | titlecase }}</td>
+        <td>{{resp.studentId}}</td>
+        <td>{{resp.studentPhoneNumber | phoneNumber}}</td>
+        <td>{{resp.course}}</td>
+        <td>{{resp.year}}</td>
+        <td>
+            <button (click)="onEdit(resp.studentId)">Edit</button>
+            <button (click)="onDelete(resp.studentId)">Delete</button>
+        </td>
+    </tr>
+</table>

@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { UniversityService } from '../university.service';
+import { CommunicationService } from '../communication.service';
 
 @Component({
   selector: 'app-mens',
@@ -8,12 +9,21 @@ import { UniversityService } from '../university.service';
 })
 export class MensComponent {
   universityServices = inject(UniversityService);
+  communicationService = inject(CommunicationService);
 
   apiFetchingListResponses: any;
-  province: any;
+province: any;
+userName = '';
+  
 
   constructor() {
     console.log('mens constructor...');
+  this.communicationService.username$.subscribe(
+    (data) => {
+      console.log(data);
+      this.userName = data;
+    }
+  )
   }
 
   fetchingUniversities() {

@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { AgenciesResponseI } from './Custom-interfaces';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,13 +10,12 @@ export class UniversityService {
 
  http = inject(HttpClient);
   
-  logicToGetUniversityList(){
-    return this.http.get('https://api.usaspending.gov/api/v2/references/toptier_agencies/');
+  logicToGetUniversityList(): Observable<AgenciesResponseI> {
+    return this.http.get<AgenciesResponseI>('https://api.usaspending.gov/api/v2/references/toptier_agencies/');
   }
 
   gettingTheFetchedUniversityList(){
    return this.http.get('http://universities.hipolabs.com/search?country=United+Kingdom')
-
   }
 }
 
@@ -27,6 +28,7 @@ export class UniversityService {
 // updated existing address 
 // delete 
 
+// CRUD
 // RETRIEVE - GET
 // CREATE   - POST
 // UPDATE - PUT

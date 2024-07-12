@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CustomerI } from '../Custom-interfaces';
 
 @Component({
   selector: 'app-uscis',
@@ -10,7 +11,7 @@ export class UscisComponent {
   studentName: string = 'Sasi';
   additionResult: number;
   fullName: string;
-  customer: any = {
+  customer: CustomerI = {
     id: 101,
     name: 'Sashi',
     address: {

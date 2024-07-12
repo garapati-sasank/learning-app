@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { UniversityService } from '../university.service';
+import { AgenciesResponseI, UniversityStudentI } from '../Custom-interfaces';
 
 @Component({
   selector: 'app-university',
@@ -7,10 +8,17 @@ import { UniversityService } from '../university.service';
   styleUrl: './university.component.scss',
 })
 export class UniversityComponent {
-
   universityService = inject(UniversityService);
-  
+
   studentIds: number[] = [100, 200, 300];
+
+  studentsList: UniversityStudentI[] = [
+    { name: 'sasi', age: 18, email: 'sasi@gmail.com' },
+    { name: 'sasi1', age: 24, email: 'sas2i@gmail.com' },
+    { name: 'sasi2', age: 20, email: 'sasi3@gmail.com' },
+  ];
+
+
   apiResponseList: any;
   student: any = {
     name: 'sasi',
@@ -18,16 +26,33 @@ export class UniversityComponent {
     email: 'sasi@gmail',
   };
 
+
+
+  learnSpreadOperator() {
+    let formData = {
+      firstName: 'sasi',
+      lastName: 'G',
+      email: 'sasig@gmail.com',
+      dob: '10/10/1999'
+    }
+    
+    let newData = {...formData, status: 'Major', email: 's@gmail.com'};
+    console.log(newData);
+    delete newData.status;
+    console.log(newData);
+    console.log(this.studentsList);
+    let newStudent = {name: 'phani', age: 25, email: 'phani@gmail.com'};
+    this.studentsList.push(newStudent);
+    console.log(this.studentsList);
+    
+  }
+
   // this.student.name
 
-  studentsList: any[] = [
-    { name: 'sasi', age: 18, email: 'sasi@gmail.com' },
-    { name: 'sasi1', age: 24, email: 'sas2i@gmail.com' },
-    { name: 'sasi2', age: 20, email: 'sasi3@gmail.com' },
-  ];
+ 
 
   studentAge: number = 21;
-  title:string ='Student table';
+  title: string = 'Student table';
 
   constructor() {
     this.modifyStudentIds();
@@ -36,6 +61,7 @@ export class UniversityComponent {
     this.addNumbers(3, 2);
     this.testIfCondition(30);
     this.testIfCondition(10);
+    this. learnSpreadOperator();
   }
 
   // let var or const
@@ -45,15 +71,15 @@ export class UniversityComponent {
     console.log(updatedStudent);
   }
 
-  getTheUniversityList() {
+  getTheUniversityList(): void {
     console.log('function called...');
     this.universityService.logicToGetUniversityList().subscribe(
-      (response) => {
+      (response: AgenciesResponseI) => {
         console.log(response);
-        this.apiResponseList = response['results'];
+        this.apiResponseList = response.results;
       },
       (error) => {
-        console.log(error)
+        console.log(error);
       }
     );
   }
@@ -63,15 +89,13 @@ export class UniversityComponent {
     this.studentsList.forEach((studentInfo) => {
       console.log(studentInfo.age);
       let updStu: any = {...studentInfo,
-        status: studentInfo.age > 20 ? 'Major' : 'Minor',
-      };
+        status: studentInfo.age > 20 ? 'Major' : 'Minor',};
       updatedStudents.push(updStu);
       // if(studentInfo.age > 20) {
       //   console.log('Major');
       // } else {
       //   console.log('Minor');
       // }
-
       // studentInfo.age > 20 ? console.log('Major') : console.log('Minor');
     });
     console.log(updatedStudents);
@@ -141,3 +165,6 @@ export class UniversityComponent {
 //     {}
 //   ]
 // }
+
+
+

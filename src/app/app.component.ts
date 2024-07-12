@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, inject } from '@angular/core';
+import { CommunicationService } from './communication.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
+
+  communicationService = inject(CommunicationService);
+
+  id: number = 10;
+  name: string = 'sashi';
+
+  lastName$ : Observable<string>;
   
   
-  //6202890
+  
+  ngOnDestroy(): void {
+    sessionStorage.clear();
+    this.communicationService.setUserName('');
+  }
+
 }
