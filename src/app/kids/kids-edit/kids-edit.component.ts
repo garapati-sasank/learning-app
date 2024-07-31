@@ -51,9 +51,11 @@ export class KidsEditComponent implements OnInit {
       })
     )
     .subscribe(
+      
       (resp) => {
         this.bindDataToForm(resp['data']);
       },
+      
       (error) => {
         console.log(error);
       }

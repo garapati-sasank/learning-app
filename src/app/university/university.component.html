@@ -1,6 +1,6 @@
 
 <button (click)="getTheUniversityList()"> University List </button>
-
+{{student.age}}
 <button (click)="testIfCondition(45)">Testing</button>
 <p>{{title}}</p>
 <p>{{student}}</p>
@@ -13,7 +13,7 @@
         <th>Abber</th>
     </tr>
 
-    <tr *ngFor="let result of apiResponseList">
+    <tr *ngFor="let result of (UniversityResponse$ | async)">
     <td>{{result.agency_id}}</td>
     <td>{{result.toptier_code}}</td>
     <td>{{result.agency_name}}</td>
@@ -22,3 +22,7 @@
 
 
 </table>
+
+<!-- <div *ngIf="!(UniversityResponse$ | async).results">
+    <p>Please try again later</p>
+</div> -->

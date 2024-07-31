@@ -14,6 +14,10 @@ export class AppComponent implements OnDestroy {
   id: number = 10;
   name: string = 'sashi';
 
+  cust = {
+    name: 'sasi',
+    id: 10
+  }
   lastName$ : Observable<string>;
   
   

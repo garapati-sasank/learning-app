@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { UniversityService } from '../university.service';
-import { AgenciesResponseI, UniversityStudentI } from '../Custom-interfaces';
+import { AgenciesResponseI, AgencyI, UniversityStudentI } from '../Custom-interfaces';
+import { filter, map, Observable, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-university',
@@ -11,6 +12,8 @@ export class UniversityComponent {
   universityService = inject(UniversityService);
 
   studentIds: number[] = [100, 200, 300];
+  UniversityResponse$: Observable<AgencyI[]>
+
 
   studentsList: UniversityStudentI[] = [
     { name: 'sasi', age: 18, email: 'sasi@gmail.com' },
@@ -57,31 +60,30 @@ export class UniversityComponent {
   constructor() {
     this.modifyStudentIds();
     this.goToEachStudent();
-    this.addNewPropInObj();
+   //  this.addNewPropInObj();
     this.addNumbers(3, 2);
     this.testIfCondition(30);
     this.testIfCondition(10);
     this. learnSpreadOperator();
   }
 
-  // let var or const
-  addNewPropInObj() {
-    // this.student['ageStatus'] = this.student.age > 21 :
-    let updatedStudent: any = { ...this.student, status: 'major' };
-    console.log(updatedStudent);
-  }
+  
 
   getTheUniversityList(): void {
-    console.log('function called...');
-    this.universityService.logicToGetUniversityList().subscribe(
-      (response: AgenciesResponseI) => {
-        console.log(response);
-        this.apiResponseList = response.results;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    this.UniversityResponse$ = this.universityService.logicToGetUniversityList();
+
+
+    
+    // .subscribe(
+    //   (response: AgenciesResponseI) => {
+    //     console.log(response);
+    //     this.apiResponseList = response.results;
+    // this.addNewPropInObj()
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
   }
 
   goToEachStudent() {
@@ -128,7 +130,35 @@ export class UniversityComponent {
       console.log('else');
     }
   }
+
+addNewStudent() {
+  // this.universityService.checkIfidExistApi().subscribe(
+  //   (response) => {
+  //     console.log(response);
+  //     if(!response) {
+  //       this.universityService.addNewStudentApi().subscribe(
+  //         () => {},
+  //         () => {}
+  //       )
+  //     } 
+  //   },
+    
+  // )
+
+  this.universityService.checkIfidExistApi().pipe(
+   // filter((idCardCheckResponse) => !!idCardCheckResponse),
+    switchMap((idCardCheckResponse) => this.universityService.addNewStudentApi())
+  ).subscribe(
+    (saveDataResponse) => {
+      console.log(saveDataResponse)
+    },
+    () => {}
+  )
 }
+}
+
+// 4s
+// 6s
 
 // someFunName() {
 

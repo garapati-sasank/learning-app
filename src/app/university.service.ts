@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { AgenciesResponseI } from './Custom-interfaces';
-import { Observable } from 'rxjs';
+import { AgenciesResponseI, AgencyI } from './Custom-interfaces';
+import { map, Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,36 @@ export class UniversityService {
 
  http = inject(HttpClient);
   
-  logicToGetUniversityList(): Observable<AgenciesResponseI> {
-    return this.http.get<AgenciesResponseI>('https://api.usaspending.gov/api/v2/references/toptier_agencies/');
+  logicToGetUniversityList(): Observable<AgencyI[]> {
+    return this.http.get<AgenciesResponseI>('https://api.usaspending.gov/api/v2/references/toptier_agencies/').pipe(
+      tap((resp) => console.log(resp)),
+      map((rep) => this.addNewPropBasedOnActiveYear(rep)),
+      tap((resp) => console.log(resp)),
+    );
+  }
+
+  addNewPropBasedOnActiveYear(rep: AgenciesResponseI): AgencyI[] {
+    const updatedAgencies = rep.results.map(agency =>  ({...agency,  isActive: parseInt(agency.active_fy) >= 2022}) )
+    return  updatedAgencies;
   }
 
   gettingTheFetchedUniversityList(){
    return this.http.get('http://universities.hipolabs.com/search?country=United+Kingdom')
+  }
+
+  saveData() {
+    // thhtp call to check if id exist or not 
+    // based on above response save info from another call
+
+  }
+
+
+  checkIfidExistApi() {
+    return of(true)
+  }
+
+  addNewStudentApi() {
+    return of('successfully saved')
   }
 }
 
@@ -35,3 +59,7 @@ export class UniversityService {
 // DELETE - Delete
 
 // GET - http://universities.hipolabs.com/search?country=United+Kingdom
+
+// ks10
+// k sasi
+// 25
