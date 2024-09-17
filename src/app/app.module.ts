@@ -31,6 +31,7 @@ import { apiHeadersInterceptor } from './api-headers.interceptor';
 import { VehicleOverviewComponent } from './vehicle-overview/vehicle-overview.component';
 import { CarComponent } from './car/car.component';
 import { CarCardComponent } from './car/car-card/car-card.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { CarCardComponent } from './car/car-card/car-card.component';
     VehicleOverviewComponent,
     CarComponent,
     CarCardComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

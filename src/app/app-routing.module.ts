@@ -20,6 +20,7 @@ import { ageGuard } from './age.guard';
 import { VehicleOverviewComponent } from './vehicle-overview/vehicle-overview.component';
 import { CarComponent } from './car/car.component';
 import { formStatusGuard } from './form-status.guard';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'car', pathMatch: 'full' },
@@ -77,6 +78,8 @@ const routes: Routes = [
   { path: 'output', component: UniversityOutputComponent },
   { path: 'vehicle', component: VehicleOverviewComponent },
   { path: 'car', component: CarComponent },
+  { path: 'about', component: AboutComponent},
+
 ];
 
 @NgModule({
