@@ -1,6 +1,9 @@
 <p>I am Angular new App</p>
 <app-header></app-header>
-{{cust | json}}
-{{name | uppercase}}
-
+<!-- {{cust | json}}
+{{name | uppercase}} -->
+<div *ngIf="isLoadingStatus$ | async" class="loader-overlay">
+    <div class="spinner"></div>
+</div>
 <router-outlet/>
+

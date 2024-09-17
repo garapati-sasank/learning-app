@@ -1,4 +1,4 @@
-import { NgModule, Output } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MensComponent } from './mens/mens.component';
 import { UscisComponent } from './uscis/uscis.component';
@@ -22,7 +22,7 @@ import { CarComponent } from './car/car.component';
 import { formStatusGuard } from './form-status.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'car', pathMatch: 'full' },
+  // { path: '', redirectTo: 'car', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'mens', component: MensComponent},
@@ -83,4 +83,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { bindToComponentInputs: true })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {} 

@@ -100,6 +100,7 @@ export class KidsComponent implements OnInit, OnDestroy {
   onEdit(sId: string): void {
     // do api call, once you get success resp from api then navigate user to edit page. 
     this.router.navigate([`kids/edit/${sId}`]);
+   //  this.ss.sid= sId
   }
 }
 

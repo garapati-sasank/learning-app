@@ -19,6 +19,7 @@ export class KidsEditComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, 
     private router: Router,
     private kidsService: KidsService) {
+    
 
   }
 

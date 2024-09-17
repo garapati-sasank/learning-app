@@ -1,1 +1,7 @@
-<p>Cars Work Done</p>
+<div class="card-body" *ngFor="let vehicle of carInfo">
+    <app-car-card 
+        [makeName]="vehicle.MakeName" 
+        [vehicleTypeName]="vehicle.VehicleTypeName" 
+        [vehicleTypeId]="vehicle.VehicleTypeId" 
+        [makeId]="vehicle.MakeId"/>
+</div>

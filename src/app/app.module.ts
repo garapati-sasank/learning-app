@@ -30,6 +30,7 @@ import { authInterceptor } from './auth.interceptor';
 import { apiHeadersInterceptor } from './api-headers.interceptor';
 import { VehicleOverviewComponent } from './vehicle-overview/vehicle-overview.component';
 import { CarComponent } from './car/car.component';
+import { CarCardComponent } from './car/car-card/car-card.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { CarComponent } from './car/car.component';
     KidsOverviewComponent,
     VehicleOverviewComponent,
     CarComponent,
+    CarCardComponent,
   ],
   imports: [
     BrowserModule,
