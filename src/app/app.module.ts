@@ -32,6 +32,7 @@ import { VehicleOverviewComponent } from './vehicle-overview/vehicle-overview.co
 import { CarComponent } from './car/car.component';
 import { CarCardComponent } from './car/car-card/car-card.component';
 import { AboutComponent } from './about/about.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { AboutComponent } from './about/about.component';
     CarComponent,
     CarCardComponent,
     AboutComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

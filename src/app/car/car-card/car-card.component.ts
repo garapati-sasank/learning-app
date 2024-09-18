@@ -7,8 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class CarCardComponent {
 
-  @Input() makeName: string;
-  @Input() vehicleTypeName: string;
-  @Input() vehicleTypeId: number;
-  @Input() makeId: number;
+  @Input() vehicleInfo: any;
+
+  onAddToCartCLick() {
+    console.log(this.vehicleInfo);
+  }
+
 }

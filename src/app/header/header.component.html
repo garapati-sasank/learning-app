@@ -17,12 +17,16 @@
 </ul> -->
 
 <ul>
-    <li *ngFor="let navItem of navItems" [ngClass]="{active: navItem?.isActive}">
+    <!-- <li *ngFor="let navItem of navItems" [ngClass]="{active: navItem?.isActive}">
         <a *ngIf="navItem?.showItem" (click)="navigateTo(navItem?.navigateUrl)" >{{navItem?.label}}</a>
     
     
+    </li> -->
+    <li *ngFor="let navItem of navItems">
+        <a [routerLink]="navItem?.navigateUrl" routerLinkActive="active">{{navItem?.label}}</a>
     </li>
-    <li><a routerLink="/about">About</a></li>
+
+    <p style="color: white; margin-left: 10px;">cart-0</p>
 
 </ul>
 

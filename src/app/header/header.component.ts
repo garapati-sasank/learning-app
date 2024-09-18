@@ -35,11 +35,13 @@ export class HeaderComponent {
     { label: 'logout', navigateUrl: 'logout', isActive: false, showItem: true },
     { label: 'Vehicle', navigateUrl: 'vehicle', isActive: false, showItem: true },
     { label: 'Car', navigateUrl:'car', isActive: false, showItem: true},
+    // { label: 'Cart', navigateUrl:'cart', isActive: false, showItem: true},
+
   ];
 
   name: string = 'sasi';
   userName = '';
-  communicationService = inject(CommunicationService);
+  communicationServicet = inject(CommunicationService);
 
   student: StudentI = {
     name: 'sasi',
@@ -49,38 +51,38 @@ export class HeaderComponent {
   constructor(private router: Router, private ser: UniversityFormService) {
     console.log('Header constructor');
 
-    this.communicationService.username$.subscribe((response) => {
-      console.log(response);
-      this.userName = response;
-      if(this.userName) {
-        console.log(this.userName)
-        let index = this.navItems.findIndex((navItem) => navItem.label === 'login');
-        console.log(index);
-        this.navItems[index].showItem = false;
-        // this.navItems = this.navItems.map((navItem) => {
-        //   if(navItem.label === 'login') {
-        //     return {...navItem, showItem: false}
-        //   } else {
-        //     return navItem
-        //   }
-        // })
+    // this.communicationService.username$.subscribe((response) => {
+    //   console.log(response);
+    //   this.userName = response;
+    //   if(this.userName) {
+    //     console.log(this.userName)
+    //     let index = this.navItems.findIndex((navItem) => navItem.label === 'login');
+    //     console.log(index);
+    //     this.navItems[index].showItem = false;
+    //     // this.navItems = this.navItems.map((navItem) => {
+    //     //   if(navItem.label === 'login') {
+    //     //     return {...navItem, showItem: false}
+    //     //   } else {
+    //     //     return navItem
+    //     //   }
+    //     // })
         
 
-      }
-    });
+    //   }
+    // });
 
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((nav) => {
-        console.log(nav['url']);
-        this.navItems = this.navItems.map((navItem) => {
-          if (nav['url'].includes(navItem.navigateUrl)) {
-            return { ...navItem, isActive: true };
-          } else {
-            return { ...navItem, isActive: false };
-          }
-        });
-      });
+    // this.router.events
+    //   .pipe(filter((event) => event instanceof NavigationEnd))
+    //   .subscribe((nav) => {
+    //     console.log(nav['url']);
+    //     this.navItems = this.navItems.map((navItem) => {
+    //       if (nav['url'].includes(navItem.navigateUrl)) {
+    //         return { ...navItem, isActive: true };
+    //       } else {
+    //         return { ...navItem, isActive: false };
+    //       }
+    //     });
+    //   });
   }
 
   logoutClick() {

@@ -1,13 +1,13 @@
 <div class="course-card">
     <div class="course-info">
-        <h3 class="course-title">{{makeName}}</h3>
-        <p class="course-author">{{vehicleTypeName}}</p>
+        <h3 class="course-title">{{vehicleInfo.MakeName}}</h3>
+        <p class="course-author">{{vehicleInfo.VehicleTypeName}}</p>
         <div class="course-price">
-            <span class="current-price">{{vehicleTypeId}}</span>
-            <span class="original-price">{{makeId}}</span>
+            <span class="current-price">{{vehicleInfo.VehicleTypeId}}</span>
+            <span class="original-price">{{vehicleInfo.MakeId}}</span>
         </div>
         <div class="course-labels">
-            <span class="label premium">Add To Cart</span>
+            <span class="label premium" (click)="onAddToCartCLick()">Add To Cart</span>
             <!-- <span class="label bestseller">MOST-VIEWED</span> -->
         </div>
     </div>

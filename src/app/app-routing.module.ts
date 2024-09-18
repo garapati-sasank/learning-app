@@ -21,26 +21,24 @@ import { VehicleOverviewComponent } from './vehicle-overview/vehicle-overview.co
 import { CarComponent } from './car/car.component';
 import { formStatusGuard } from './form-status.guard';
 import { AboutComponent } from './about/about.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'car', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'mens', component: MensComponent},
-  {
-    path: 'womens',
+  {path: 'womens',
     canLoad: [authGuard],
     loadChildren: () =>
       import('./womens/womens.module').then((m) => m.WomensModule),
   },
-  {
-    path: 'uscis',
+  {path: 'uscis',
     component: UscisComponent,
     canActivate: [authGuard, ageGuard],
     canDeactivate: [formStatusGuard]
   },
-  {
-    path: 'kids',
+  {path: 'kids',
     component: KidsOverviewComponent,
     children: [
       { path: '', redirectTo: 'table', pathMatch: 'full' },
@@ -48,8 +46,7 @@ const routes: Routes = [
       { path: 'edit/:id', component: KidsEditComponent },
     ],
   },
-  {
-    path: 'sale',
+  {path: 'sale',
     component: SaleComponent,
     children: [
       { path: '', redirectTo: 'tops', pathMatch: 'full' },
@@ -61,15 +58,12 @@ const routes: Routes = [
   },
   { path: 'sale1', component: SalesTestComponent },
   { path: 'university', component: UniversityComponent },
-  {
-    path: 'women-sale',
+  {path: 'women-sale',
     loadChildren: () =>
       import('./women-sale/women-sale.module').then((m) => m.WomenSaleModule),
     canMatch: [authGuard, ageGuard],
-
-  },
-  {
-    path: 'university-lazy-loading',
+},
+  {path: 'university-lazy-loading',
     loadChildren: () =>
       import('./university-overview/university-overview.module').then(
         (m) => m.UniversityOverviewModule
@@ -79,7 +73,7 @@ const routes: Routes = [
   { path: 'vehicle', component: VehicleOverviewComponent },
   { path: 'car', component: CarComponent },
   { path: 'about', component: AboutComponent},
-
+  { path: 'cart', component: CartComponent},
 ];
 
 @NgModule({
