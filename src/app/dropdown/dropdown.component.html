@@ -1,0 +1,11 @@
+<div class="dropdown">
+    <button class="dropbtn" (click)="theDropdown()">
+      {{ choose || 'Select Name' }}
+    </button>
+    <div class="dropdown-content" *ngIf="box">
+      <div *ngFor="let option of select" (click)="applyOption(option)">
+        {{ option }}
+      </div>
+    </div>
+  </div>
+  

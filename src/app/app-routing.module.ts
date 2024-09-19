@@ -22,58 +22,39 @@ import { CarComponent } from './car/car.component';
 import { formStatusGuard } from './form-status.guard';
 import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'car', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'mens', component: MensComponent},
-  {path: 'womens',
-    canLoad: [authGuard],
-    loadChildren: () =>
-      import('./womens/womens.module').then((m) => m.WomensModule),
-  },
-  {path: 'uscis',
-    component: UscisComponent,
-    canActivate: [authGuard, ageGuard],
-    canDeactivate: [formStatusGuard]
-  },
-  {path: 'kids',
-    component: KidsOverviewComponent,
-    children: [
-      { path: '', redirectTo: 'table', pathMatch: 'full' },
-      { path: 'table', component: KidsComponent },
-      { path: 'edit/:id', component: KidsEditComponent },
-    ],
-  },
-  {path: 'sale',
-    component: SaleComponent,
+  {path: 'womens', canLoad: [authGuard],loadChildren: () =>import('./womens/womens.module').then((m) => m.WomensModule)},
+  {path: 'uscis',component: UscisComponent,canActivate:[authGuard,ageGuard],canDeactivate:[formStatusGuard]},
+  {path: 'kids',component: KidsOverviewComponent,
+    children: [{ path: '', redirectTo: 'table', pathMatch: 'full' },
+               { path: 'table', component: KidsComponent },
+               { path: 'edit/:id', component: KidsEditComponent }],},
+  {path: 'sale',component: SaleComponent,
     children: [
       { path: '', redirectTo: 'tops', pathMatch: 'full' },
       { path: 'tops', component: TopsComponent },
       { path: 'bottoms', component: BottomsComponent },
       { path: 'accessories', component: AccessoriesComponent },
-      { path: 'foot-wear', component: FootWearComponent },
-    ],
-  },
+      { path: 'foot-wear', component: FootWearComponent },],},
   { path: 'sale1', component: SalesTestComponent },
   { path: 'university', component: UniversityComponent },
-  {path: 'women-sale',
-    loadChildren: () =>
-      import('./women-sale/women-sale.module').then((m) => m.WomenSaleModule),
-    canMatch: [authGuard, ageGuard],
-},
-  {path: 'university-lazy-loading',
-    loadChildren: () =>
-      import('./university-overview/university-overview.module').then(
-        (m) => m.UniversityOverviewModule
-      ),
-  },
+  {path: 'women-sale',loadChildren: () =>import('./women-sale/women-sale.module').then((m) => m.WomenSaleModule),
+    canMatch: [authGuard, ageGuard],},
+  {path: 'university-lazy-loading',loadChildren: () =>import('./university-overview/university-overview.module').then((m) => m.UniversityOverviewModule),},
   { path: 'output', component: UniversityOutputComponent },
   { path: 'vehicle', component: VehicleOverviewComponent },
   { path: 'car', component: CarComponent },
   { path: 'about', component: AboutComponent},
-  { path: 'cart', component: CartComponent},
+  { path: 'dropdown', component: DropdownComponent},
+
+
+  
 ];
 
 @NgModule({

@@ -33,6 +33,7 @@ import { CarComponent } from './car/car.component';
 import { CarCardComponent } from './car/car-card/car-card.component';
 import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { CartComponent } from './cart/cart.component';
     CarCardComponent,
     AboutComponent,
     CartComponent,
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,
