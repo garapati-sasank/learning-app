@@ -52,13 +52,10 @@ const routes: Routes = [
   { path: 'car', component: CarComponent },
   { path: 'about', component: AboutComponent},
   { path: 'dropdown', component: DropdownComponent},
-
-
-  
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { bindToComponentInputs: true })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {} 
+export class AppRoutingModule {}

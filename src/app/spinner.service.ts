@@ -29,7 +29,5 @@ export class SpinnerService {
 
   takeOutValueFromArray() {
     this.noOfReq.pop();
-    
   }
-
 }

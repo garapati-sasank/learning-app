@@ -79,7 +79,7 @@ Git Hub Repos:
 
 	EDUCATION
 
-Southern Illinois University, Master’s  (MCS), Edwardsvillie, USA-2023 May
+Southern Illinois University, Master’s , Edwardsvillie, USA-2023 May
 Bachelor of Technology, Mechanical Engineering, Vignan University, India-2018
 
 
@@ -174,5 +174,3 @@ UI With React.js
 •	Used React bootstrap components like tabs, accordions and date pickers etc.
 •	Used Axios package for calling rest-API’s.
 •	Implemented reactive validations by using reactive forms.
-
-

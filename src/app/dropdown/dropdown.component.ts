@@ -19,5 +19,3 @@ export class DropdownComponent {
     this.box = false; // Close dropdown after selection
   }
 }
-
-
