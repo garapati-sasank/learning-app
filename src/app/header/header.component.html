@@ -26,7 +26,7 @@
         <a [routerLink]="navItem?.navigateUrl" routerLinkActive="active">{{navItem?.label}}</a>
     </li>
 
-    <p style="color: white; margin-left: 10px;">cart-0</p>
+    <button style="color: white; margin-left: 10px;"(click)="updateCartNumber()">cart-{{CartItems.length}}</button>
 
 </ul>
 

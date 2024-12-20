@@ -1,16 +1,23 @@
 import { Component, inject } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { BagService } from '../bag.service';
+import { CommunicationService } from '../communication.service';
 import { StudentI } from '../Custom-interfaces';
 import { UniversityFormService } from '../university-overview/university-form.service';
-import { CommunicationService } from '../communication.service';
-import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
+
+
 })
 export class HeaderComponent {
+
+  bagServices = inject(BagService)
+
+  CartItems =[]
+
   navItems = [
     { label: 'Mens', navigateUrl: 'mens', isActive: false, showItem: true },
     { label: 'Womens', navigateUrl: 'womens', isActive: false, showItem: true },
@@ -35,6 +42,8 @@ export class HeaderComponent {
     { label: 'logout', navigateUrl: 'logout', isActive: false, showItem: true },
     { label: 'Vehicle', navigateUrl: 'vehicle', isActive: false, showItem: true },
     { label: 'Dropdown', navigateUrl:'dropdown', isActive: false, showItem: true},
+    { label: 'car', navigateUrl:'car', isActive: false, showItem: true},
+
 
 
     { label: 'Cart', navigateUrl:'cart', isActive: false, showItem: true},
@@ -119,4 +128,10 @@ export class HeaderComponent {
   navigateToSignup() {
     this.router.navigate(['signup']);
   }
+
+  updateCartNumber(){
+    this.CartItems = this.bagServices.carsAddedToBag;
+
+  }
+
 }

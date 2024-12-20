@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { BagService } from '../../bag.service';
 
 @Component({
   selector: 'app-car-card',
@@ -7,10 +8,14 @@ import { Component, Input } from '@angular/core';
 })
 export class CarCardComponent {
 
+  bagService =inject(BagService)
   @Input() vehicleInfo: any;
 
   onAddToCartCLick() {
-    console.log(this.vehicleInfo);
+    // console.log(this.vehicleInfo);
+    this.bagService.addSelectedCarToBag(this.vehicleInfo)
   }
+
+
 
 }
