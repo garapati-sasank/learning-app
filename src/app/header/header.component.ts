@@ -37,7 +37,7 @@ export class HeaderComponent {
     { label: 'Dropdown', navigateUrl:'dropdown', isActive: false, showItem: true},
 
 
-    // { label: 'Cart', navigateUrl:'cart', isActive: false, showItem: true},
+    { label: 'Cart', navigateUrl:'cart', isActive: false, showItem: true},
 
   ];
 

@@ -52,6 +52,8 @@ const routes: Routes = [
   { path: 'car', component: CarComponent },
   { path: 'about', component: AboutComponent},
   { path: 'dropdown', component: DropdownComponent},
+  { path: 'cart', component: CartComponent},
+
 ];
 
 @NgModule({
