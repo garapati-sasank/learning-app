@@ -174,3 +174,16 @@ UI With React.js
 •	Used React bootstrap components like tabs, accordions and date pickers etc.
 •	Used Axios package for calling rest-API’s.
 •	Implemented reactive validations by using reactive forms.
+
+
+
+
+// t && t = t
+// t && f = f
+// f && t = f
+// f && f = f
+
+// t || t = t
+// t || f = t
+// f || t = t
+// f || f = f

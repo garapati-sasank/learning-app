@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BagService } from '../bag.service';
 import { CommunicationService } from '../communication.service';
@@ -12,7 +12,7 @@ import { UniversityFormService } from '../university-overview/university-form.se
 
 
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   bagServices = inject(BagService)
 
@@ -96,6 +96,13 @@ export class HeaderComponent {
     //   });
   }
 
+  ngOnInit() {
+    this.bagServices.carsAddedToBagBs$.subscribe(
+      (data)=>{
+        this.CartItems = data;
+      })
+  }
+
   logoutClick() {
     this.navigateToLogin();
   }
@@ -129,9 +136,9 @@ export class HeaderComponent {
     this.router.navigate(['signup']);
   }
 
-  updateCartNumber(){
-    this.CartItems = this.bagServices.carsAddedToBag;
+  // updateCartNumber(){
+  //   this.CartItems =this.bagServices.carsAddedToBag;
 
-  }
+  // }
 
 }

@@ -6,8 +6,9 @@
             <span class="current-price">{{vehicleInfo.VehicleTypeId}}</span>
             <span class="original-price">{{vehicleInfo.MakeId}}</span>
         </div>
-        <div class="course-labels">
-            <span class="label premium" (click)="onAddToCartCLick()">Add To Cart</span>
+        <div class="course-labels" >
+            <span class="label premium" *ngIf="!showCart"  (click)="onAddToCartCLick()">Add To Cart</span>
+            <span class="label premium" *ngIf="showCart">Remove From Cart</span>
             <!-- <span class="label bestseller">MOST-VIEWED</span> -->
         </div>
     </div>
