@@ -1,5 +1,6 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { BagService } from '../../bag.service';
+import { VehicleI } from '../../Custom-interfaces';
 
 @Component({
   selector: 'app-car-card',
@@ -9,7 +10,7 @@ import { BagService } from '../../bag.service';
 export class CarCardComponent implements OnInit {
 
   bagService =inject(BagService)
-  @Input() vehicleInfo: any;
+  @Input() vehicleInfo: VehicleI;
 
   //existingVehiclesInCart = [];
   showCart = true;
@@ -18,13 +19,18 @@ export class CarCardComponent implements OnInit {
   ngOnInit(): void {
     this.bagService.carsAddedToBagBs$.subscribe((d) => {
       // this.existingVehiclesInCart = d;
-      this.showCart = d.find((vehicleFromCart) => vehicleFromCart.VehicleTypeId === this.vehicleInfo.VehicleTypeId && vehicleFromCart.MakeId === this.vehicleInfo.MakeId)
+      this.showCart = !!d.find((vehicleFromCart) => vehicleFromCart.customId === this.vehicleInfo.customId)
     })
   }
 
   onAddToCartCLick() {
     // console.log(this.vehicleInfo);
     this.bagService.addSelectedCarToBag(this.vehicleInfo)
+  }
+
+  onRemoveToCartCLick() {
+    // console.log(this.vehicleInfo);
+    this.bagService.removeCarFromCart(this.vehicleInfo)
   }
 
 

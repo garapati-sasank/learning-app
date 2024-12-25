@@ -74,4 +74,5 @@ export interface VehicleI {
   MakeName: string;
   VehicleTypeId: number;
   VehicleTypeName: string;
+  customId: string;
 }

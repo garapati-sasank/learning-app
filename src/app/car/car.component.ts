@@ -29,7 +29,9 @@ export class CarComponent implements OnInit {
       (response: VehicleResponseI) => {
         this.isLoading = false;
         console.log(response);
-        this.carInfo = response.Results;
+        this.carInfo = response.Results.map((car) =>{
+          return {...car, customId: `${car.MakeId}${car.VehicleTypeId}`}
+        } );
       },
       (error) => {
         console.log(error);

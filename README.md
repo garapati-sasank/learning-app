@@ -1,9 +1,11 @@
 password - test123
 
 map
-filter
-find
+filter : first to last full check:- will return (Return type to be discussed ?)
+Return type : Array of objects.
+find: will stop when find requirement will not go further 
 findIndex
+FOR EACH
 
 
 canMatch
