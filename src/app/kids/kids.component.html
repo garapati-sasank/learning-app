@@ -1,7 +1,4 @@
-
 <form [formGroup]="studentCreateForm">
-
-
     <input type="text" name="" id="" formControlName="studentName" placeholder="name">
     <br>
     <input type="text" name="" id="" formControlName="studentId" placeholder="ID">
@@ -14,10 +11,7 @@
     <br>
     <input type="text" name="" id="" formControlName="country" placeholder="country">
     <br>
-
-
 </form>
-
 <button (click)="createStudentFormClick()">Create Student</button>
 <table>
     <tr>
@@ -27,9 +21,7 @@
         <th>Course</th>
         <th>year</th>
         <th>Actions</th>
-
     </tr>
-
     <tr *ngFor="let resp of  globalVariableLearning">
         <td>{{resp.studentName | titlecase }}</td>
         <td>{{resp.studentId}}</td>

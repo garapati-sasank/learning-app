@@ -10,11 +10,9 @@ export class SaleComponent {
 
   router = inject(Router);
 
-
   navigateTo(childrenPath: string) {
     let path = `sale/${childrenPath}`;
     console.log(path);
     this.router.navigate([path]);
   }
-
 }

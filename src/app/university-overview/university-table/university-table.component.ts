@@ -7,12 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class UniversityTableComponent {
 
-
-  @Input() tableData: any;
-
-
-
-
-
-
+ @Input() tableData: any;
 }

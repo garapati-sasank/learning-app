@@ -10,5 +10,4 @@ export class WomensComponent {
   constructor() {
     console.log('womens constructor...')
   }
-
 }

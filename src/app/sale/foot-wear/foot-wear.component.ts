@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './foot-wear.component.html',
   styleUrl: './foot-wear.component.scss'
 })
-export class FootWearComponent {
-
-}
+export class FootWearComponent {}

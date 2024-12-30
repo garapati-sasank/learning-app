@@ -11,57 +11,50 @@ import { switchMap } from 'rxjs';
 })
 export class KidsEditComponent implements OnInit {
 
-  studentDetails= null;
+  studentDetails = null;
   studentUpdateForm: FormGroup;
 
   @routeId() id: string;
 
-  constructor(private activatedRoute: ActivatedRoute, 
+  constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     private kidsService: KidsService) {
-    
-
   }
 
   ngOnInit() {
     console.log(this.id);
     this.createForm();
-  //  this.activatedRoute.params.subscribe(
-  //   (params) => {
-  //    const id =  params['id'];
+    //  this.activatedRoute.params.subscribe(
+    //   (params) => {
+    //    const id =  params['id'];
+    //     this.kidsService.getDataById(id).subscribe(
+    //       (resp) => {
+    //         this.bindDataToForm(resp['data'])
+    //       },
+    //       (error) => {
+    //         console.log(error);
+    //       }
+    //     )
+    //   },
+    //   (err) => {
+    //     console.log(err)
+    //   }
+    // )
 
-  //     this.kidsService.getDataById(id).subscribe(
-  //       (resp) => {
-  //         this.bindDataToForm(resp['data'])
-  //       },
-  //       (error) => {
-  //         console.log(error);
-  //       }
-  //     )
-  //   },
-  //   (err) => {
-  //     console.log(err)
-  //   }
-  // )
-
-
-  this.activatedRoute.params
-    .pipe(
-      switchMap((params) => {
-        return this.kidsService.getDataById(params['id']);
-      })
-    )
-    .subscribe(
-      
-      (resp) => {
-        this.bindDataToForm(resp['data']);
-      },
-      
-      (error) => {
-        console.log(error);
-      }
-    );
-}
+    this.activatedRoute.params
+      .pipe(
+        switchMap((params) => {
+          return this.kidsService.getDataById(params['id']);
+        })
+      )
+      .subscribe(
+        (resp) => {
+          this.bindDataToForm(resp['data']);
+        }, (error) => {
+          console.log(error);
+        }
+      );
+  }
 
   createForm() {
     this.studentUpdateForm = new FormGroup({
@@ -77,11 +70,11 @@ export class KidsEditComponent implements OnInit {
 
   bindDataToForm(studentInfo) {
     this.studentUpdateForm.patchValue({
-      studentName: studentInfo.studentName ,
-      studentId: studentInfo.studentId ,
-      studentPhoneNumber: studentInfo.studentPhoneNumber ,
-      course: studentInfo.course ,
-      year: studentInfo.year ,
+      studentName: studentInfo.studentName,
+      studentId: studentInfo.studentId,
+      studentPhoneNumber: studentInfo.studentPhoneNumber,
+      course: studentInfo.course,
+      year: studentInfo.year,
       country: studentInfo.country,
       _id: studentInfo._id
     })
@@ -99,7 +92,4 @@ export class KidsEditComponent implements OnInit {
       }
     )
   }
-
-  
-
 }

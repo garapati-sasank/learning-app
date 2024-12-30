@@ -9,13 +9,10 @@ import { Observable } from 'rxjs';
 export class CarService {
 
   constructor(private http: HttpClient) {}
-
   // http = inject(HttpClient);
-
-  logicForCarData$(): Observable<VehicleResponseI> {
+logicForCarData$(): Observable<VehicleResponseI> {
     return this.http.get<VehicleResponseI>(
       'https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMake/merc?format=json'
     );
   }
-  
-}
+  }

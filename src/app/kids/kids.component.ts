@@ -53,18 +53,17 @@ export class KidsComponent implements OnInit, OnDestroy {
       }
     );
 
-
     this.kidsService.saveStudent(this.studentCreateForm.value).pipe(
       // switchMap(() => {
       //   return this.kidsService.logicToGetData()
       // }),
-      switchMap(() =>  this.kidsService.logicToGetData()),
+      switchMap(() => this.kidsService.logicToGetData()),
       catchError((error) => throwError(error))
     ).subscribe(
       (response: StudentListResponseI) => {
         this.globalVariableLearning = response.data;
       },
-      (error) => {}
+      (error) => { }
     );
   }
 
@@ -100,7 +99,7 @@ export class KidsComponent implements OnInit, OnDestroy {
   onEdit(sId: string): void {
     // do api call, once you get success resp from api then navigate user to edit page. 
     this.router.navigate([`kids/edit/${sId}`]);
-   //  this.ss.sid= sId
+    //  this.ss.sid= sId
   }
 }
 
@@ -109,17 +108,11 @@ export class KidsComponent implements OnInit, OnDestroy {
 //   // return c;
 //   return a+b;
 // }
-
 // myFun = (a: number, b: number) => {
 //   const c = a+b
 //   return a+b
 // }
-
 // myFun = (a: number, b: number) =>  a+b;
-
 // buildName(age) {
-
 //   const name = `sashi-${age}`;
 // }
-
-

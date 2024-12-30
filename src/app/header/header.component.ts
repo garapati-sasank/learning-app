@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   bagServices = inject(BagService)
 
-  CartItems =[]
+  CartItems = []
 
   navItems = [
     { label: 'Mens', navigateUrl: 'mens', isActive: false, showItem: true },
@@ -31,7 +31,6 @@ export class HeaderComponent implements OnInit {
       navigateUrl: 'university-lazy-loading',
       isActive: false, showItem: true,
     },
-
     {
       label: 'University Table using input and output',
       navigateUrl: 'output',
@@ -41,13 +40,9 @@ export class HeaderComponent implements OnInit {
     { label: 'Signup', navigateUrl: 'signup', isActive: false, showItem: true },
     { label: 'logout', navigateUrl: 'logout', isActive: false, showItem: true },
     { label: 'Vehicle', navigateUrl: 'vehicle', isActive: false, showItem: true },
-    { label: 'Dropdown', navigateUrl:'dropdown', isActive: false, showItem: true},
-    { label: 'car', navigateUrl:'car', isActive: false, showItem: true},
-
-
-
-    { label: 'Cart', navigateUrl:'cart', isActive: false, showItem: true},
-
+    { label: 'Dropdown', navigateUrl: 'dropdown', isActive: false, showItem: true },
+    { label: 'car', navigateUrl: 'car', isActive: false, showItem: true },
+    { label: 'Cart', navigateUrl: 'cart', isActive: false, showItem: true },
   ];
 
   name: string = 'sasi';
@@ -77,7 +72,7 @@ export class HeaderComponent implements OnInit {
     //     //     return navItem
     //     //   }
     //     // })
-        
+
 
     //   }
     // });
@@ -98,7 +93,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.bagServices.carsAddedToBagBs$.subscribe(
-      (data)=>{
+      (data) => {
         this.CartItems = data;
       })
   }
@@ -122,7 +117,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate([path]);
   }
 
-  navigateTotestingTheButton() {}
+  navigateTotestingTheButton() { }
 
   navigateToLogin() {
     this.router.navigate(['login']);
@@ -138,7 +133,5 @@ export class HeaderComponent implements OnInit {
 
   // updateCartNumber(){
   //   this.CartItems =this.bagServices.carsAddedToBag;
-
   // }
-
 }

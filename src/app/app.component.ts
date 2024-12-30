@@ -9,6 +9,7 @@ import { SpinnerService } from './spinner.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnDestroy {
+  [x: string]: any;
 
   communicationService = inject(CommunicationService);
   SpinnerService = inject(SpinnerService);
@@ -17,18 +18,14 @@ export class AppComponent implements OnDestroy {
 
   id: number = 10;
   name: string = 'sashi';
-
   cust = {
     name: 'sasi',
     id: 10
   }
-  lastName$ : Observable<string>;
-  
-  
-  
+  lastName$: Observable<string>;
+
   ngOnDestroy(): void {
     sessionStorage.clear();
     this.communicationService.setUserName('');
   }
-
 }

@@ -15,8 +15,7 @@ export class CarCardComponent implements OnInit {
   //existingVehiclesInCart = [];
   showCart = true;
 
-
-  ngOnInit(): void {
+ngOnInit(): void {
     this.bagService.carsAddedToBagBs$.subscribe((d) => {
       // this.existingVehiclesInCart = d;
       this.showCart = !!d.find((vehicleFromCart) => vehicleFromCart.customId === this.vehicleInfo.customId)
@@ -32,11 +31,7 @@ export class CarCardComponent implements OnInit {
     // console.log(this.vehicleInfo);
     this.bagService.removeCarFromCart(this.vehicleInfo)
   }
-
-
-
 }
-
 
 // t && t = t
 // t && f = f
@@ -47,5 +42,3 @@ export class CarCardComponent implements OnInit {
 // t || f = t
 // f || t = t
 // f || f = f
-
-

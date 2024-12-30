@@ -7,12 +7,9 @@ find: will stop when find requirement will not go further
 findIndex
 FOR EACH
 
-
 canMatch
 canActivateChild
-
 interceptors - How to add custom headers
-
 
 to create new Angular app - ng new app-name --standalone=false
 to run angular app -- ng s
@@ -23,11 +20,8 @@ path: 'womensale' , loadchildren: () => import(    ).then((m) =>m.womenSaleModul
 parent -> children = yes @Input
 children -> parent = @Output
 npm run dev
-
 http://localhost:3010/api/student - GET
-
 http://localhost:3010/api/student - POST
-
 {   "studentName":"Bhargav",
     "studentId": "B123",
     "studentPhoneNumber": "2202202201",
@@ -35,39 +29,26 @@ http://localhost:3010/api/student - POST
     "year": 2024,
     "country": "US"
  }
-
  http://localhost:3010/api/student/6626d489e01306327df6bf19 - DELETE
-
-
  {
 //   userName
 //   password
 //   role
 // }
-
 <apiresponselist>
-
 pipable operators
-
 tap
 map
 filter
 switchMap
 catchError
-
 forkjoin
 mergemap
-
-
-
 
 Kumar Sasank G				
 Email: garapatisasank@gmail.com				
 Contact: (989) 909-3340
- 
-	SUMMARY
-
-
+ 	SUMMARY
 •	4+ years of experience in analysis, design, development and implementation of Web Based, Client/Server applications.
 •	Expert-level HTML5, CSS3, SCSS, Bootstrap, JavaScript, JSON, Angular js, Angular 2.0 through 17, react and Vue. 
 •	Worked on back-end technologies such as Node and JAVA (Spring MVC and Spring Boot)
@@ -79,15 +60,11 @@ Contact: (989) 909-3340
 Git Hub Repos:
 •	Angular with Redux: https://github.com/garapati-sasank/learning-app.git
 
-	EDUCATION
-
+EDUCATION
 Southern Illinois University, Master’s , Edwardsvillie, USA-2023 May
 Bachelor of Technology, Mechanical Engineering, Vignan University, India-2018
-
-
-
-	PROFESSIONAL EXPERIENCE
-                                                                                                    
+ 
+ PROFESSIONAL EXPERIENCE
 Broadridge
 May 2023 – present
 UI Developer.
@@ -130,7 +107,6 @@ User Interface: (Angular 17 with Ng-Rx)
 •	Worked with Testing and API team. 
 •	Used Postman and Swagger to test API's.
 
-
 Red Soft Solutions 	May 2018 – Dec 2021
 India, Hyderabad
 •	Implemented Micro-services-based architecture on the UI.
@@ -164,7 +140,6 @@ India, Hyderabad
 
 UI With React.js
 
-
 •	Worked on React.js with Reactive-search, search-kit and search-UI components which is integrated with elastic search.
 •	Worked on Single list, multi list, Multi select, single select, data search, date range, date picker components etc. within Reactive search components.
 •	Working on reactive forms by integrating Reactive-search, search-kit and search-UI components with reactive forms.
@@ -177,14 +152,10 @@ UI With React.js
 •	Used Axios package for calling rest-API’s.
 •	Implemented reactive validations by using reactive forms.
 
-
-
-
 // t && t = t
 // t && f = f
 // f && t = f
 // f && f = f
-
 // t || t = t
 // t || f = t
 // f || t = t

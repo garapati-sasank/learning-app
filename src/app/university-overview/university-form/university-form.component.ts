@@ -8,32 +8,17 @@ import { UniversityFormService } from '../university-form.service';
 })
 export class UniversityFormComponent {
 
- universityformservice = inject(UniversityFormService)
+  universityformservice = inject(UniversityFormService)
+  universitiesList: any;
 
- universitiesList: any;
-  
-
-  logicToGetUniversityList(){
+  logicToGetUniversityList() {
     this.universityformservice.extractTheUniversityList().subscribe(
-      (response: any)=>{
+      (response: any) => {
         console.log(response);
         // logic to go into each and every obj in array and find how many domains in there, add new property in every obj, if you find 1 domanin then value should be Ragular, if 
         this.universitiesList = response;
-
       },
-      (error)=>{}
+      (error) => { }
     )
   }
-
 }
-
-// this.myFun(100)
-
-// myFun(value1: number) {
-
-//   //
-//   //
-//   //
-//   //
-//   //
-// }

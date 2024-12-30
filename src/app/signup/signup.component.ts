@@ -19,7 +19,7 @@ export class SignupComponent {
 
   newForm() {
     this.signupForm = new FormGroup({
-      userName: new FormControl('',[Validators.required, Validators.maxLength(10),Validators.minLength(4)]),
+      userName: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(4)]),
       password: new FormControl(''),
       role: new FormControl('')
     });
@@ -27,7 +27,6 @@ export class SignupComponent {
 
   signUpUser() {
     console.log(this.signupForm);
-
     this.authService.signUp(this.signupForm.value).subscribe(
       (response) => {
         console.log(response);
@@ -37,10 +36,5 @@ export class SignupComponent {
         console.log(error);
       }
     );
-    
   }
-
-
-
-  
 }

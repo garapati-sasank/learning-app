@@ -6,16 +6,13 @@ import { SpinnerService } from './spinner.service';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
- let spinnerService=inject(SpinnerService)
+  let spinnerService = inject(SpinnerService)
   console.log('req', req);
-
   const carServices = inject(CarService);
-  
   spinnerService.updateLoadingStatus(true);
-
   const token = sessionStorage.getItem('app_token');
-  const headers = req.headers.set('Authorization', 'Bearer '+token);
-  const updatedReq = req.clone({headers});
+  const headers = req.headers.set('Authorization', 'Bearer ' + token);
+  const updatedReq = req.clone({ headers });
   return next(updatedReq).pipe(
     delay(2000),
     catchError((e) => {
@@ -23,7 +20,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       return throwError(() => e);
     }),
     filter((event) => event instanceof HttpResponse),
-    tap(() =>{ 
+    tap(() => {
       console.log('auth resp inter...')
       spinnerService.updateLoadingStatus(false);
     })

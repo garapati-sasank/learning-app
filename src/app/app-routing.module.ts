@@ -53,7 +53,6 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'dropdown', component: DropdownComponent},
   { path: 'cart', component: CartComponent},
-
 ];
 
 @NgModule({

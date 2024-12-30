@@ -1,35 +1,29 @@
 export interface StudentI {
-    name: string;
-    age: number
+  name: string;
+  age: number
 }
-
 export interface CustomerI {
-    id: number;
-    name: string;
-    email: string;
-    transactionDates: string[];
-    address: AddressI
-
+  id: number;
+  name: string;
+  email: string;
+  transactionDates: string[];
+  address: AddressI
 }
-
 export interface AddressI {
-    apartmentNo: number;
-      street: string;
-      village: string;
-      state: string;
-      zipCode: number;
+  apartmentNo: number;
+  street: string;
+  village: string;
+  state: string;
+  zipCode: number;
 }
-
 export interface UniversityStudentI {
-    name: string;
-    age: number;
-    email: string;
+  name: string;
+  age: number;
+  email: string;
 }
-
 export interface AgenciesResponseI {
-    results: AgencyI[];
+  results: AgencyI[];
 }
-
 export interface AgencyI {
   agency_id: number;
   toptier_code: string;
@@ -44,13 +38,11 @@ export interface AgencyI {
   current_total_budget_authority_amount: number;
   percentage_of_total_budget_authority: number;
   agency_slug: string;
-} 
-
-export interface StudentListResponseI {
-    data: StudentListI[];
-    status: number
 }
-
+export interface StudentListResponseI {
+  data: StudentListI[];
+  status: number
+}
 export interface StudentListI {
   country: string;
   course: string;
@@ -61,8 +53,6 @@ export interface StudentListI {
   __v: number;
   _id: string;
 }
-
-
 export interface VehicleResponseI {
   Count: number;
   Message: string;

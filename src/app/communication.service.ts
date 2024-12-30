@@ -11,14 +11,11 @@ export class CommunicationService {
 
   userRole = '';
 
-
   constructor() { }
-
 
   setUserName(userName: string) {
     this.userNameSubject.next(userName);
   }
-
   setRole(role: string) {
     this.userRole = role;
   }

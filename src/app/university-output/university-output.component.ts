@@ -13,5 +13,4 @@ export class UniversityOutputComponent {
     console.log(event);
     this.universityListFromForm = event;
   }
-
 }

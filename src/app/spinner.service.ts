@@ -7,14 +7,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class SpinnerService {
 
   noOfReq = [];
-
   private isLoadingBs = new BehaviorSubject(false);
   isLoading$ = this.isLoadingBs.asObservable();
 
   updateLoadingStatus(status: boolean) {
     // some$ = this.isLoading$.subscribe()
     // this.isLoadingBs.value
-
     if (status) {
       this.pushValueToArray()
     } else {
@@ -22,11 +20,9 @@ export class SpinnerService {
     }
     this.isLoadingBs.next(this.noOfReq.length > 0);
   }
-
   pushValueToArray() {
     this.noOfReq.push(1);
   }
-
   takeOutValueFromArray() {
     this.noOfReq.pop();
   }

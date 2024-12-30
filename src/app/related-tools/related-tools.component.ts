@@ -9,5 +9,4 @@ export class RelatedToolsComponent {
   constructor() {
     console.log('relatedToolsComponentConstructor');
   }
-  
 }

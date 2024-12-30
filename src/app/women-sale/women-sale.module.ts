@@ -20,4 +20,4 @@ import { AccesoriesComponent } from './accesories/accesories.component';
     WomenSaleRoutingModule
   ]
 })
-export class WomenSaleModule { }
+export class WomenSaleModule {}

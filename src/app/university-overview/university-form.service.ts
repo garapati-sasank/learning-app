@@ -15,7 +15,6 @@ export class UniversityFormService {
         map((resp: any[]) => this.addNewPropToCollegeObjBasedOnDomains(resp))
       );
   }
-
   addNewPropToCollegeObjBasedOnDomains(resp: any[]) {
     let updatedUniversitieList = [];
     resp.forEach((university) => {
@@ -27,7 +26,6 @@ export class UniversityFormService {
       }
       updatedUniversitieList.push(updatedUniversity);
     });
-
     return updatedUniversitieList;
   }
 }

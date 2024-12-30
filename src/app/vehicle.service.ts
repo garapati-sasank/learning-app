@@ -14,13 +14,4 @@ export class VehicleService {
   logicForVehicleData(): Observable<VehicleResponseI> {
     return this.http.get<VehicleResponseI>('https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMake/merc?format=json')
   }
-
-
-
-
 }
-
-
-
-
-

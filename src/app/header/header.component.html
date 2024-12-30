@@ -1,6 +1,5 @@
 <!-- <ul *ngIf="userName">
- 
-    <li><a routerLink='kids'>Kids</a></li>
+ <li><a routerLink='kids'>Kids</a></li>
     <li><a (click)="navigateTo('sale')">Sale</a></li>
     <li><a (click)="navigateTo('uscis')">uscis</a></li>
     <li><a (click)="navigateTo('university')">University</a></li>
@@ -11,22 +10,14 @@
     <li *ngIf="!userName"><a (click)="navigateToLogin()">login</a></li>
     <li><a (click)="navigateToSignup()">signup</a></li>
 <li><a (click)="logoutClick()">logout</a></li>
-
-    <p style="color: white;">Loggedin  as: {{userName}}</p>
-
+<p style="color: white;">Loggedin  as: {{userName}}</p>
 </ul> -->
-
 <ul>
     <!-- <li *ngFor="let navItem of navItems" [ngClass]="{active: navItem?.isActive}">
         <a *ngIf="navItem?.showItem" (click)="navigateTo(navItem?.navigateUrl)" >{{navItem?.label}}</a>
-    
-    
     </li> -->
     <li *ngFor="let navItem of navItems">
         <a [routerLink]="navItem?.navigateUrl" routerLinkActive="active">{{navItem?.label}}</a>
     </li>
-
     <button style="color: white; margin-left: 10px;">cart-{{CartItems.length}}</button>
-
 </ul>
-

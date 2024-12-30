@@ -10,8 +10,7 @@ export class WomenSaleComponent {
 
  router = inject(Router);
 
-
-  navigateTo(childrenPath: string) {
+navigateTo(childrenPath: string) {
     let path = `women-sale/${childrenPath}`;
     console.log(path);
     this.router.navigate([path]);

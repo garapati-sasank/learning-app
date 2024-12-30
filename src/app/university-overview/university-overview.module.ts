@@ -6,7 +6,6 @@ import { UniversityOverviewComponent } from './university-overview.component';
 import { UniversityFormComponent } from './university-form/university-form.component';
 import { UniversityTableComponent } from './university-table/university-table.component';
 
-
 @NgModule({
   declarations: [
     UniversityOverviewComponent,

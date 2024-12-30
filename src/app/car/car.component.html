@@ -1,29 +1,15 @@
-
 <button (click)="getCarData()">Vehicle Info</button>
-
 <p style="color: red;" *ngIf="vehicheApiErrorInfo?.isError">{{vehicheApiErrorInfo.message}}</p>
 <div class="card-body" *ngFor="let vehicle of carInfo">
-    <!-- @defer (when isLoading) { -->
-        <!-- <app-car-card 
+  <!-- @defer (when isLoading) { -->
+  <!-- <app-car-card 
         [makeName]="vehicle.MakeName" 
         [vehicleTypeName]="vehicle.VehicleTypeName" 
         [vehicleTypeId]="vehicle.VehicleTypeId" 
         [makeId]="vehicle.MakeId"/> -->
-
-        <app-car-card [vehicleInfo]="vehicle"/>
-        
-
-    
-    
+  <app-car-card [vehicleInfo]="vehicle" />
 </div>
 
-<!-- @defer (when cond) {
-    <calendar-cmp />
-  }
-
-  @defer {
-    <calendar-cmp />
-  } -->
-    <!-- FILTER 
-    FIND
-    MAP -->
+<!-- @defer (when cond){<calendar-cmp />}
+@defer{<calendar-cmp />}-->
+<!--FILTER FIND MAP-->

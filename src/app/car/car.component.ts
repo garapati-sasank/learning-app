@@ -15,23 +15,22 @@ export class CarComponent implements OnInit {
   // carServices = inject(CarService);
 
   constructor(private carServices: CarService) {
-    
   }
 
   ngOnInit(): void {
-   //  this.getCarData();
+    //  this.getCarData();
   }
 
   getCarData(): void {
     this.isLoading = true;
-   this.vehicheApiErrorInfo = null;
+    this.vehicheApiErrorInfo = null;
     this.carServices.logicForCarData$().subscribe(
       (response: VehicleResponseI) => {
         this.isLoading = false;
         console.log(response);
-        this.carInfo = response.Results.map((car) =>{
-          return {...car, customId: `${car.MakeId}${car.VehicleTypeId}`}
-        } );
+        this.carInfo = response.Results.map((car) => {
+          return { ...car, customId: `${car.MakeId}${car.VehicleTypeId}` }
+        });
       },
       (error) => {
         console.log(error);

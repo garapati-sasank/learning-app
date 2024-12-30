@@ -36,22 +36,20 @@ export class LoginComponent {
 
   loginFormClick() {
     console.log(this.loginForm);
-    
-   // if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value).subscribe(
-        (response: LoginResponseI) => {
-          this.router.navigate(['mens']);
-          console.log(response);
-          // this.communicationService.userName = response.data.user.userName;
-          this.communicationService.setUserName(response?.data?.user?.userName);
-          this.communicationService.setRole(response.data.user.role);
-           sessionStorage.setItem('app_token', response.data.token);
 
-          // this.communicationService.setUserName(response['data']['user']['userName']);
-        },
-        (error) => {}
-      );
+    // if (this.loginForm.valid) {
+    this.authService.login(this.loginForm.value).subscribe(
+      (response: LoginResponseI) => {
+        this.router.navigate(['mens']);
+        console.log(response);
+        // this.communicationService.userName = response.data.user.userName;
+        this.communicationService.setUserName(response?.data?.user?.userName);
+        this.communicationService.setRole(response.data.user.role);
+        sessionStorage.setItem('app_token', response.data.token);
+        // this.communicationService.setUserName(response['data']['user']['userName']);
+      },
+      (error) => { }
+    );
     // }
-
   }
 }

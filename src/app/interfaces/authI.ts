@@ -15,7 +15,6 @@ export interface LoginResponseI {
 
     data: DataI;
     status: number
-
 }
 
 export interface DataI {
@@ -25,7 +24,5 @@ export interface DataI {
 
 export interface UserI {
     userName: string;
-     role: string
+    role: string
 }
-
-

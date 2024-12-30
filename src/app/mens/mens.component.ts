@@ -12,18 +12,17 @@ export class MensComponent {
   communicationService = inject(CommunicationService);
 
   apiFetchingListResponses: any;
-province: any;
-userName = '';
-  
+  province: any;
+  userName = '';
 
   constructor() {
     console.log('mens constructor...');
-  this.communicationService.username$.subscribe(
-    (data) => {
-      console.log(data);
-      this.userName = data;
-    }
-  )
+    this.communicationService.username$.subscribe(
+      (data) => {
+        console.log(data);
+        this.userName = data;
+      }
+    )
   }
 
   fetchingUniversities() {
@@ -31,15 +30,13 @@ userName = '';
       (wright) => {
         this.apiFetchingListResponses = wright;
       },
-      (wrong) => {}
+      (wrong) => { }
     );
   }
 }
 
 //http://universities.hipolabs.com/search?country=United+Kingdom
 //get
-
 //Fetch All Universities
 //
-
 // function(v1: number, val2: an) {}

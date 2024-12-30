@@ -14,4 +14,4 @@ import { WomensComponent } from './womens.component';
     WomensRoutingModule
   ]
 })
-export class WomensModule { }
+export class WomensModule {}
