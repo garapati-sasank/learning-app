@@ -9,11 +9,22 @@ import { VehicleResponseI } from '../Custom-interfaces';
 })
 export class VehicleOverviewComponent {
 
+  name = 'sasi';
+
   vehiclesList = [];
   vehicleServices = inject(VehicleService);
 
   constructor() {
     this.getVehiclesData();
+  }
+
+  testZoneChanges() {
+    console.log('func exec......');
+    return 'Zone test scenarios...'
+  }
+
+  updateName() {
+    this.name = 'sasi G';
   }
 
   getVehiclesData(): void {

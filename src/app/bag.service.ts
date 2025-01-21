@@ -27,10 +27,13 @@ export class BagService {
 
   removeCarFromCart(vehicleToBeRemoved: VehicleI) {
     let existingCarsInBag = this.carsAddedToBagBs.value;
-    let indexToBeRemoved = existingCarsInBag.findIndex((car) => {
-      return car.customId === vehicleToBeRemoved.customId
-    })
+    // let indexToBeRemoved = existingCarsInBag.findIndex((car) => {
+    //   return car.customId === vehicleToBeRemoved.customId
+    // })
+
+    let indexToBeRemoved = existingCarsInBag.findIndex(car => car.customId === vehicleToBeRemoved.customId)
     existingCarsInBag.splice(indexToBeRemoved, 1);
     this.carsAddedToBagBs.next(existingCarsInBag);
   }
 }
+
