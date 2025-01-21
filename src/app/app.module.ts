@@ -12,7 +12,7 @@ import { SaleComponent } from './sale/sale.component';
 import { UscisComponent } from './uscis/uscis.component';
 import { SalesTestComponent } from './sales-test/sales-test.component';
 import { UniversityComponent } from './university/university.component';
-import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { TopsComponent } from './sale/tops/tops.component';
 import { BottomsComponent } from './sale/bottoms/bottoms.component';
 import { AccessoriesComponent } from './sale/accessories/accessories.component';
@@ -35,49 +35,43 @@ import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    RelatedToolsComponent,
-    FooterComponent,
-    HeaderComponent,
-    MensComponent,
-    KidsComponent,
-    SaleComponent,
-    UscisComponent,
-    SalesTestComponent,
-    UniversityComponent,
-    TopsComponent,
-    BottomsComponent,
-    AccessoriesComponent,
-    FootWearComponent,
-    UniversityOutputComponent,
-    UniversityOutputFormComponent,
-    UniversityOutputTableComponent,
-    LoginComponent,
-    SignupComponent,
-    PhoneNumberPipe,
-    KidsEditComponent,
-    KidsOverviewComponent,
-    VehicleOverviewComponent,
-    CarComponent,
-    CarCardComponent,
-    AboutComponent,
-    CartComponent,
-    DropdownComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-   provideHttpClient(withInterceptors([authInterceptor, apiHeadersInterceptor]))
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        RelatedToolsComponent,
+        FooterComponent,
+        HeaderComponent,
+        MensComponent,
+        KidsComponent,
+        SaleComponent,
+        UscisComponent,
+        SalesTestComponent,
+        UniversityComponent,
+        TopsComponent,
+        BottomsComponent,
+        AccessoriesComponent,
+        FootWearComponent,
+        UniversityOutputComponent,
+        UniversityOutputFormComponent,
+        UniversityOutputTableComponent,
+        LoginComponent,
+        SignupComponent,
+        PhoneNumberPipe,
+        KidsEditComponent,
+        KidsOverviewComponent,
+        VehicleOverviewComponent,
+        CarComponent,
+        CarCardComponent,
+        AboutComponent,
+        CartComponent,
+        DropdownComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule], providers: [
+        provideHttpClient(withInterceptors([authInterceptor, apiHeadersInterceptor])),
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
 // 5678908906
 // 708-098-0987
