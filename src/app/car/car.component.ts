@@ -3,9 +3,10 @@ import { CarService } from '../car.service';
 import { VehicleI, VehicleResponseI } from '../Custom-interfaces';
 
 @Component({
-  selector: 'app-car',
-  templateUrl: './car.component.html',
-  styleUrl: './car.component.scss',
+    selector: 'app-car',
+    templateUrl: './car.component.html',
+    styleUrl: './car.component.scss',
+    standalone: false
 })
 export class CarComponent implements OnInit {
   carInfo: VehicleI[] = [];

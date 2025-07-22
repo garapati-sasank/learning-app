@@ -2,9 +2,10 @@ import { Component, inject } from '@angular/core';
 import { UniversityFormService } from '../university-form.service';
 
 @Component({
-  selector: 'app-university-form',
-  templateUrl: './university-form.component.html',
-  styleUrl: './university-form.component.scss'
+    selector: 'app-university-form',
+    templateUrl: './university-form.component.html',
+    styleUrl: './university-form.component.scss',
+    standalone: false
 })
 export class UniversityFormComponent {
 

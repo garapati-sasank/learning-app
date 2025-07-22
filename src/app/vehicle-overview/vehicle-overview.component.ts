@@ -3,9 +3,10 @@ import { VehicleService } from '../vehicle.service';
 import { VehicleResponseI } from '../Custom-interfaces';
 
 @Component({
-  selector: 'app-vehicle-overview',
-  templateUrl: './vehicle-overview.component.html',
-  styleUrl: './vehicle-overview.component.scss',
+    selector: 'app-vehicle-overview',
+    templateUrl: './vehicle-overview.component.html',
+    styleUrl: './vehicle-overview.component.scss',
+    standalone: false
 })
 export class VehicleOverviewComponent {
 
@@ -24,7 +25,7 @@ export class VehicleOverviewComponent {
   }
 
   updateName() {
-    this.name = 'sasi G';
+    //this.name = 'sasi G';
   }
 
   getVehiclesData(): void {

@@ -5,9 +5,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { switchMap } from 'rxjs';
 
 @Component({
-  selector: 'app-kids-edit',
-  templateUrl: './kids-edit.component.html',
-  styleUrl: './kids-edit.component.scss'
+    selector: 'app-kids-edit',
+    templateUrl: './kids-edit.component.html',
+    styleUrl: './kids-edit.component.scss',
+    standalone: false
 })
 export class KidsEditComponent implements OnInit {
 

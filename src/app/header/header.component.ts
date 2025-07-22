@@ -6,11 +6,10 @@ import { StudentI } from '../Custom-interfaces';
 import { UniversityFormService } from '../university-overview/university-form.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
-
-
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss',
+    standalone: false
 })
 export class HeaderComponent implements OnInit {
 
@@ -100,6 +99,13 @@ export class HeaderComponent implements OnInit {
 
   logoutClick() {
     this.navigateToLogin();
+  }
+
+  updateHeader() {
+    console.log('Function in header comp called...');
+    // setTimeout(() => {
+      return 'Hello Zone';
+    // }, 6000)
   }
 
   // router = inject(Router);

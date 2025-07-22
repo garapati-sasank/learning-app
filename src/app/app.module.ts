@@ -12,7 +12,7 @@ import { SaleComponent } from './sale/sale.component';
 import { UscisComponent } from './uscis/uscis.component';
 import { SalesTestComponent } from './sales-test/sales-test.component';
 import { UniversityComponent } from './university/university.component';
-import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
 import { TopsComponent } from './sale/tops/tops.component';
 import { BottomsComponent } from './sale/bottoms/bottoms.component';
 import { AccessoriesComponent } from './sale/accessories/accessories.component';

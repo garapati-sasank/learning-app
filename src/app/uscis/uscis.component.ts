@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { CustomerI } from '../Custom-interfaces';
 
 @Component({
-  selector: 'app-uscis',
-  templateUrl: './uscis.component.html',
-  styleUrl: './uscis.component.scss',
+    selector: 'app-uscis',
+    templateUrl: './uscis.component.html',
+    styleUrl: './uscis.component.scss',
+    standalone: false
 })
 export class UscisComponent {
   title: string = 'shopping-app';

@@ -3,9 +3,10 @@ import { BagService } from '../../bag.service';
 import { VehicleI } from '../../Custom-interfaces';
 
 @Component({
-  selector: 'app-car-card',
-  templateUrl: './car-card.component.html',
-  styleUrl: './car-card.component.scss'
+    selector: 'app-car-card',
+    templateUrl: './car-card.component.html',
+    styleUrl: './car-card.component.scss',
+    standalone: false
 })
 export class CarCardComponent implements OnInit {
 

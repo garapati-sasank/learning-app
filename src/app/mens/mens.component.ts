@@ -3,9 +3,10 @@ import { UniversityService } from '../university.service';
 import { CommunicationService } from '../communication.service';
 
 @Component({
-  selector: 'app-mens',
-  templateUrl: './mens.component.html',
-  styleUrl: './mens.component.scss',
+    selector: 'app-mens',
+    templateUrl: './mens.component.html',
+    styleUrl: './mens.component.scss',
+    standalone: false
 })
 export class MensComponent {
   universityServices = inject(UniversityService);

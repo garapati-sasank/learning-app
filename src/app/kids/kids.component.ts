@@ -7,9 +7,10 @@ import { catchError, switchMap, throwError } from 'rxjs';
 
 // material-pagination
 @Component({
-  selector: 'app-kids',
-  templateUrl: './kids.component.html',
-  styleUrl: './kids.component.scss',
+    selector: 'app-kids',
+    templateUrl: './kids.component.html',
+    styleUrl: './kids.component.scss',
+    standalone: false
 })
 export class KidsComponent implements OnInit, OnDestroy {
   studentCreateForm: FormGroup;

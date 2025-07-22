@@ -4,9 +4,10 @@ import { AgenciesResponseI, AgencyI, UniversityStudentI } from '../Custom-interf
 import { filter, map, Observable, switchMap, tap } from 'rxjs';
 
 @Component({
-  selector: 'app-university',
-  templateUrl: './university.component.html',
-  styleUrl: './university.component.scss',
+    selector: 'app-university',
+    templateUrl: './university.component.html',
+    styleUrl: './university.component.scss',
+    standalone: false
 })
 export class UniversityComponent {
   universityService = inject(UniversityService);

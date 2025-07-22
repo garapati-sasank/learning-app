@@ -4,9 +4,10 @@ import { Observable } from 'rxjs';
 import { SpinnerService } from './spinner.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    standalone: false
 })
 export class AppComponent implements OnDestroy {
   [x: string]: any;
