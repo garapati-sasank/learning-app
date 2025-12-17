@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -70,7 +70,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
         FormsModule,
         ReactiveFormsModule], providers: [
         provideHttpClient(withInterceptors([authInterceptor, apiHeadersInterceptor])),
-        provideHttpClient(withInterceptorsFromDi())
+        provideHttpClient(withInterceptorsFromDi()),
+        provideExperimentalZonelessChangeDetection()
     ] })
 export class AppModule { }
 // 5678908906
